@@ -4,14 +4,12 @@ public class DailyPower {
 
     // a) print power prices during a day
     public static void printPowerPrices(double[] prices) {
-        public static void printPowerPrices(double[] prices) {
 
             System.out.println("Power prices during the day:");
 
             for (int hour = 0; hour < prices.length; hour++) {
                 System.out.println("Hour " + hour + ": " + prices[hour] + " kr/kWh");
             }
-        }
 
     }
 
