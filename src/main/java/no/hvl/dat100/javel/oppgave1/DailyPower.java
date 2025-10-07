@@ -16,7 +16,11 @@ public class DailyPower {
     // b) print power usage during a day
     public static void printPowerUsage(double[] usage) {
 
-        // TODO
+        System.out.println("Power usage during the day");
+
+        for(int hour = 0; hour < usage.length; hour++)
+
+            System.out.println("Hour " + hour + ": " + usage[hour] + " kWh/hr");
 
     }
 
