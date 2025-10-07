@@ -5,23 +5,21 @@ public class DailyPower {
     // a) print power prices during a day
     public static void printPowerPrices(double[] prices) {
 
-            System.out.println("Power prices during the day:");
+        for (double s : prices){
+            System.out.printf("%.2f NOK ", s);
+        }
+        System.out.println();
 
-            for (int hour = 0; hour < prices.length; hour++) {
-                System.out.println("Hour " + hour + ": " + prices[hour] + " kr/kWh");
-            }
 
     }
 
     // b) print power usage during a day
     public static void printPowerUsage(double[] usage) {
 
-        System.out.println("Power usage during the day");
-
-        for(int hour = 0; hour < usage.length; hour++)
-
-            System.out.println("Hour " + hour + ": " + usage[hour] + " kWh/hr");
-
+        for (double s : usage) {
+            System.out.print(s + " kWh ");
+        }
+        System.out.println();
     }
 
     // c) compute power usage for a single day
@@ -30,6 +28,10 @@ public class DailyPower {
         double sum = 0;
 
         // TODO
+        for(double s : usage){
+            sum += s;
+        }
+
 
         return sum;
     }
@@ -40,6 +42,9 @@ public class DailyPower {
         double price = 0;
 
         // TODO
+        for(int i = 0; i < usage.length; i++){
+            price += usage[i] * prices[i];
+        }
 
         return price;
     }
@@ -48,11 +53,18 @@ public class DailyPower {
     private static final double THRESHOLD = 0.9375;
     private static final double PERCENTAGE = 0.9;
 
-    private static double getSupport(double usage, double price) {
+    public static double getSupport(double usage, double price) {
 
         double support = 0;
+        double cost = usage * price;
 
         // TODO
+        if (cost > THRESHOLD){
+
+            cost = cost - THRESHOLD;
+            support = cost * PERCENTAGE;
+
+        }
 
         return support;
     }
@@ -61,8 +73,25 @@ public class DailyPower {
     public static double computePowerSupport(double[] usage, double[] prices) {
 
         double support = 0;
-
+        double support_hour = 0;
+        double cost = 0;
         // TODO
+        for(int s = 0; s < usage.length; s++){
+            if (usage[s]*prices[s] > THRESHOLD){
+
+                support_hour = usage[s]*prices[s]-THRESHOLD;
+                support_hour *= PERCENTAGE;
+
+                support += support_hour;
+                support_hour = 0;
+
+            }
+            else{
+
+            }
+            support_hour = 0;
+        }
+
 
         return support;
     }
@@ -75,6 +104,9 @@ public class DailyPower {
         double price = 0;
 
         // TODO
+        for(double s : usage){
+            price += s*NORGESPRIS_KWH;
+        }
 
         return price;
     }
@@ -85,6 +117,12 @@ public class DailyPower {
         double temp_max = 0;
 
         // TODO
+        for(int s = 0; s < usage.length; s++){
+            if(usage[s] > temp_max){
+                temp_max = usage[s];
+
+            }
+        }
 
         return temp_max;
     }
@@ -92,8 +130,14 @@ public class DailyPower {
     public static double findAvgPower(double[] usage) {
 
         double average = 0;
+        double sum = 0;
 
         // TODO
+        for(int i = 0; i < usage.length; i++){
+            sum += usage[i];
+        }
+        average = sum/usage.length;
+
 
         return average;
     }

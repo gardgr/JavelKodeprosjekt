@@ -24,6 +24,24 @@ public class MonthMain {
          Remember to teste the methods as you implement them
          Remember to also to check that you get the expected results
          */
+        //a
+        MonthlyPower.print_PowerUsage(MonthPowerData.powerusage_month);
+        System.out.println();
+        //b
+        MonthlyPower.print_PowerPrices(MonthPowerData.powerprices_month);
+        System.out.println();
+        //c
+        System.out.println(MonthlyPower.computePowerUsage(MonthPowerData.powerusage_month));
+        //d
+        System.out.println(MonthlyPower.exceedThreshold(MonthPowerData.powerusage_month, 500));
+        System.out.println(MonthlyPower.exceedThreshold(MonthPowerData.powerusage_month, 1000));
+        //e
+        System.out.println(MonthlyPower.computeSpotPrice(MonthPowerData.powerusage_month, MonthPowerData.powerprices_month));
+        //f
+        System.out.println(MonthlyPower.computePowerSupport(MonthPowerData.powerusage_month, MonthPowerData.powerprices_month));
+        //g
+        System.out.println(MonthlyPower.computeNorgesPrice(MonthPowerData.powerusage_month));
+
 
     }
 }
