@@ -5,22 +5,13 @@ public class DailyPower {
     // a) print power prices during a day
     public static void printPowerPrices(double[] prices) {
 
-            System.out.println("Power prices during the day:");
-
-            for (int hour = 0; hour < prices.length; hour++) {
-                System.out.println("Hour " + hour + ": " + prices[hour] + " kr/kWh");
-            }
 
     }
 
     // b) print power usage during a day
     public static void printPowerUsage(double[] usage) {
 
-        System.out.println("Power usage during the day");
 
-        for(int hour = 0; hour < usage.length; hour++)
-
-            System.out.println("Hour " + hour + ": " + usage[hour] + " kWh/hr");
 
     }
 
