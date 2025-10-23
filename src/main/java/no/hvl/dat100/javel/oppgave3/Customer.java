@@ -2,15 +2,61 @@ package no.hvl.dat100.javel.oppgave3;
 
 public class Customer {
 
-    // TODO - object variables (attributes)
+    // Objektvariabler (attributter)
+    private String name;
+    private String email;
+    private int customerId;
+    private PowerAgreementType[] agreement;
 
-    public Customer(String name, String email, int customer_id, PowerAgreementType agreement) {
-
-        // TODO
+    // Konstruktør
+    public Customer(String name, String email, int customerId, PowerAgreementType[] agreement) {
+        this.name = name;
+        this.email = email;
+        this.customerId = customerId;
+        this.agreement = agreement;
     }
 
-    // TODO - getter/setter methods for all objectvariables
+    // Getter- og setter-metoder
+    public String getName() {
+        return name;
+    }
 
-    // TODO - toString method
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public PowerAgreementType[] getAgreement() {
+        return agreement;
+    }
+
+    public void setAgreement(PowerAgreementType[] agreement) {
+        this.agreement = agreement;
+    }
+
+    // toString-metode
+    @Override
+    public String toString() {
+        return "Customer {" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", customerId=" + customerId +
+                ", agreement=" + agreement +
+                '}';
+    }
 }
