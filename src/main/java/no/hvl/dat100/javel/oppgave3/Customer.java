@@ -52,11 +52,10 @@ public class Customer {
     // toString-metode
     @Override
     public String toString() {
-        return "Customer {" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", customerId=" + customerId +
-                ", agreement=" + agreement +
-                '}';
+        return "Customer Info:\n" +
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Customer ID: " + customerId + "\n" +
+                "Agreement: " + agreement + "\n";
     }
 }
