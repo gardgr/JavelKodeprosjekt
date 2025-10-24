@@ -6,10 +6,10 @@ public class Customer {
     private String name;
     private String email;
     private int customerId;
-    private PowerAgreementType[] agreement;
+    private PowerAgreementType agreement;
 
     // Konstruktør
-    public Customer(String name, String email, int customerId, PowerAgreementType[] agreement) {
+    public Customer(String name, String email, int customerId, PowerAgreementType agreement) {
         this.name = name;
         this.email = email;
         this.customerId = customerId;
@@ -41,11 +41,11 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public PowerAgreementType[] getAgreement() {
+    public PowerAgreementType getAgreement() {
         return agreement;
     }
 
-    public void setAgreement(PowerAgreementType[] agreement) {
+    public void setAgreement(PowerAgreementType agreement) {
         this.agreement = agreement;
     }
 
