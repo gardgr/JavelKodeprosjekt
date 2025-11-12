@@ -4,18 +4,18 @@ import no.hvl.dat100.javel.oppgave4.Customers;
 
 public class CustomerMain {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        System.out.println("==============");
-        System.out.println("OPPGAVE 3");
-        System.out.println("==============");
-        System.out.println();
+            System.out.println("==============");
+            System.out.println("OPPGAVE 3");
+            System.out.println("==============");
+            System.out.println();
 
-        /*
-        TODO
 
-         Write code that creates a Customer object and teste the methods implemented in the class
+            Customer customer1 = new Customer("Ola Nordmann", "ola.nordmann@example.com", 1001, PowerAgreementType.SPOTPRICE);
 
-        */
+            System.out.println("Kunde opprettet med hentet avtale:");
+            System.out.println(customer1);
+        }
     }
-}
+
