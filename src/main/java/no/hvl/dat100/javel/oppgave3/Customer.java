@@ -16,6 +16,9 @@ public class Customer {
         this.agreement = agreement;
     }
 
+    public Customer(int i, String olaNordmann, PowerAgreementType powerAgreementType) {
+    }
+
     // Getter- og setter-metoder
     public String getName() {
         return name;

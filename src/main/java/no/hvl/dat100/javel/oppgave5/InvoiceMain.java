@@ -2,7 +2,6 @@ package no.hvl.dat100.javel.oppgave5;
 
 import no.hvl.dat100.javel.oppgave3.Customer;
 import no.hvl.dat100.javel.oppgave3.PowerAgreementType;
-import no.hvl.dat100.javel.oppgave2.MonthPowerData;
 
 public class InvoiceMain {
 
@@ -13,12 +12,23 @@ public class InvoiceMain {
         System.out.println("==============");
         System.out.println();
 
-        /*
-        TODO
+        Customer c1 = new Customer(1, "Ola Nordmann", PowerAgreementType.SPOTPRICE);
 
-         Write code that uses the methods implemented in the Invoice-classes
+        double[][] usage = {
+                {1.0, 0.5, 0.8}, // dag 1
+                {0.9, 1.1, 0.7}  // dag 2
+        };
 
-        */
+        double[][] prices = {
+                {2.0, 2.5, 2.2}, // dag 1
+                {2.1, 2.0, 2.3}  // dag 2
+        };
 
+        Invoice invoice = new Invoice(c1, "November", usage, prices);
+
+        invoice.computeAmount();
+
+        invoice.printInvoice();
     }
 }
+

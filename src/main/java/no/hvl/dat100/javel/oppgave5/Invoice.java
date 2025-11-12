@@ -1,35 +1,41 @@
 package no.hvl.dat100.javel.oppgave5;
 
 import no.hvl.dat100.javel.oppgave3.Customer;
-import no.hvl.dat100.javel.oppgave2.MonthlyPower;
-
-import java.util.Arrays;
 
 public class Invoice {
 
-    private Customer c; // customer associated with this invoice
-    private String month; // month that the invoice covers
-    private double[][] usage; // power usage this month (per day and per hour)
-    private double[][] prices; // power prices for this month
+    private Customer c;
+    private String month;
+    private double[][] usage;
+    private double[][] prices;
 
-    private double amount; // power price for this month
+    private double amount;
 
-
-    public Invoice(Customer c, String month, double[][] usage, double[][] power_prices) {
-
-        // TODO - konstruktør
-
+    // a)
+    public Invoice(Customer c, String month, double[][] usage, double[][] prices) {
+        this.c = c;
+        this.month = month;
+        this.usage = usage;
+        this.prices = prices;
+        this.amount = 0;
     }
 
+    // b)
     public void computeAmount() {
+        double sum = 0;
 
-        // TODO
+        for (int i = 0; i < usage.length; i++) {
+            for (int j = 0; j < usage[i].length; j++) {
+                sum += usage[i][j] * prices[i][j];
+            }
+        }
 
+        amount = sum;
     }
 
     public void printInvoice() {
-
-        // TODO
-
+        System.out.println("Faktura for: " + c.getName());
+        System.out.println("Måned: " + month);
+        System.out.println("Totalt beløp: " + amount + " kr");
     }
 }

@@ -12,12 +12,24 @@ public class CustomersMain {
         System.out.println("==============");
         System.out.println();
 
-        /*
-        TODO
+        // Lager objekt med plass til 3 kunder
+        Customers customers = new Customers(3);
 
-         Write code that uses and tests the methods implemented in the Customers class
+        Customer c1 = new Customer(1, "Ola Nordmann", PowerAgreementType.SPOTPRICE);
+        Customer c2 = new Customer(2, "Kari Nordmann", PowerAgreementType.NORGESPRICE);
 
-        */
+        customers.addCustomer(c1);
+        customers.addCustomer(c2);
 
+        System.out.println("Antall kunder: " + customers.countNonNull());
+
+        Customer funnet = customers.getCustomer(2);
+        if (funnet != null) {
+            System.out.println("Fant kunde: " + funnet.getName());
+        }
+
+        customers.removeCustomer(1);
+
+        System.out.println("Antall kunder etter sletting: " + customers.countNonNull());
     }
 }
